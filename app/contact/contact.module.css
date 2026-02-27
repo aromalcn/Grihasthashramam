@@ -1,0 +1,147 @@
+.hero {
+  background-color: var(--color-text-main);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+.subtitle {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.infoCard {
+  background-color: var(--color-green-light);
+  padding: 2.5rem;
+  border-radius: 8px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
+}
+
+.contactItem {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.iconWrapper {
+  color: var(--color-brown-deep);
+  flex-shrink: 0;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.formBox {
+  background-color: var(--color-bg-card);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroupFull {
+  grid-column: 1 / -1;
+  margin-bottom: 1.5rem;
+}
+
+.inputLabel {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-main);
+  font-size: 0.95rem;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast);
+  background-color: var(--color-bg-body);
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--color-green-primary);
+  background-color: var(--color-white);
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

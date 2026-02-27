@@ -1,0 +1,128 @@
+.hero {
+  background-color: var(--color-text-main);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+.subtitle {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  padding: 6rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+  border-bottom: 2px solid var(--color-green-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.infoBlock {
+  margin-bottom: 3rem;
+}
+
+.address {
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-main);
+}
+
+.mapWrapper {
+  width: 100%;
+  height: 400px;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.mapFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.travelMode {
+  margin-bottom: 2rem;
+}
+
+.travelTitle {
+  font-weight: 600;
+  color: var(--color-brown-deep);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.travelText {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.sidebarBox {
+  background-color: var(--color-green-light);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.timingList {
+  list-style: none;
+}
+
+.timingItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+  color: var(--color-text-main);
+}
+
+.timingItem:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .mapWrapper {
+    height: 300px;
+  }
+}

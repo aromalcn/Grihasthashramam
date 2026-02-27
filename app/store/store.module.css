@@ -1,0 +1,33 @@
+.pageHeader {
+  background-color: var(--color-text-main);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  padding: 8rem 0 4rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+.subtitle {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.storeSection {
+  padding-bottom: 6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}

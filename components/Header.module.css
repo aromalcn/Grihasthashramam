@@ -1,0 +1,231 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all var(--transition-smooth);
+  background-color: transparent;
+}
+
+.headerScrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  transition: filter var(--transition-fast);
+  filter: brightness(0) invert(1); /* White logo initially */
+}
+
+.headerScrolled .logo img {
+  filter: none; /* Original colors when scrolled */
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-white);
+  opacity: 0.9;
+  position: relative;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-green-primary);
+  transition: width var(--transition-fast);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.headerScrolled .navLink {
+  color: var(--color-text-main);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.headerScrolled .menuButton {
+  color: var(--color-text-main);
+}
+
+.mobileStoreButton {
+  display: none;
+  margin-left: auto; /* Push to the right, next to menu button */
+  margin-right: 1rem;
+}
+
+
+.floatingStoreButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-green-primary);
+  color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  z-index: 999;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  text-decoration: none;
+}
+
+.floatingStoreButton:hover {
+  transform: translateY(-4px);
+  background-color: var(--color-brown-deep);
+  opacity: 1; /* Override navLink opacity if it cascades */
+}
+
+.floatingLoginButton {
+  position: fixed;
+  bottom: 7rem; /* Stacked above store button */
+  right: 2rem;
+  background-color: var(--color-brown-deep);
+  color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  z-index: 999;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  text-decoration: none;
+}
+
+.floatingLoginButton:hover {
+  transform: translateY(-4px);
+  background-color: var(--color-brown-vibrant);
+  color: var(--color-white);
+}
+
+.mobileLoginButton {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  .menuButton {
+    display: block;
+    z-index: 1001;
+    padding: 0.5rem; /* Better touch target */
+  }
+  .mobileStoreButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    padding: 0.5rem; /* Better touch target */
+  }
+
+  .mobileLoginButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .floatingStoreButton, .floatingLoginButton {
+    display: none;
+  }
+}
+
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-brown-deep);
+  z-index: 2000;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform var(--transition-smooth);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.mobileNavLink {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-white);
+  text-decoration: none; /* Explicitly remove underline */
+  transition: opacity var(--transition-fast);
+}
+
+.mobileNavLink:hover {
+  opacity: 0.7;
+}
